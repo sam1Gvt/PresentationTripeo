@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Tripeo {% endblock %}
+
+{% block body %}
+    <div class="container">
+
+        <h1 style="text-align: center; margin-top: 40px">TRIPEO</h1>
+
+
+
+        <h2>Liste des annonces :  </h2>
+        {% for annonce in tabAnnonce %}
+            <ul>
+                <li>{{ annonce.getTypeBien()}}</li>
+                
+                  <p>  Nombre de chambre(s) : {{ annonce.getNombreChambre()}} </p>
+                    <p>  Prix : {{ annonce.getPrix()}} € </p>
+
+                
+                <button type="button" class="btn btn-primary">
+                    Voir
+                </button>
+
+            </ul>
+
+
+            
+        {% endfor %}
+    </div>
+{% endblock %}
